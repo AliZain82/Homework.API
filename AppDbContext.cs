@@ -1,16 +1,15 @@
-﻿using Database_with_LINQ.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using
+using Quiz.Models;
 
-namespace Database_with_LINQ.Data
+namespace Quiz.Data
 {
+  
     public class AppDbContext :DbContext
     {
        
         public DbSet<Student> Students { get; set; }
-        public DbSet<Faculty> Faculty { get; set; }
-        public DbSet<Class> Classes { get; set; }
-        public DbSet<Enrollment> Enrollments { get; set; }
-
+        public DbSet<Course> Course { get; set; }
+      
         protected readonly IConfiguration Configuration;
         public AppDbContext(IConfiguration configuration)
         {
@@ -25,4 +24,7 @@ namespace Database_with_LINQ.Data
         
     }
     
+}
+
+    }
 }

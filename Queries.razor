@@ -1,0 +1,40 @@
+﻿<h3>Queries</h3>
+<h3>Task 1: Students Id</h3>
+<ul>
+    @foreach (var resultA in StudentID())
+    {
+        <li>@StudentId: @Student.Id</li>
+    }
+</ul>
+<h3>Task 2: Students with 50% </h3>
+<ul>
+    @foreach (var resultB in Student50%())
+    {
+        <li>SId: @resultB.SId - Score: @StudentB.Score</li>
+    }
+</ul>
+
+
+@code {
+    private IEnumerable<dynamic> StudentID()
+    {
+        return dbContext.Course
+            .Where(c => S.Id)
+            .Select(c => new { Course = c.Name, Student = c.Score })
+            .ToList();
+    }
+    private IEnumerable<dynamic> Student50%()
+    {
+        return dbContext.Students
+            .Where(s => !s.EnrolledCourses.Any(c => c.Score.SId ==> 50%))
+            .Select(s => new { StudentId = s.Id, Score = s.Major })
+            .ToList();
+    }
+    
+    
+
+
+
+@code {
+
+}
